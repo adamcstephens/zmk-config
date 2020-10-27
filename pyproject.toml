@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "zmk-config"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+west = "^0.8.0"
+pyelftools = ">=0.24"
+PyYAML = ">=5.1"
+canopen = "^1.1.0"
+packaging = "^20.4"
+progress = "^1.5"
+intelhex = "^2.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
