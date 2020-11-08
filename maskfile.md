@@ -1,6 +1,8 @@
 # my notes
 
-## opensuse setup
+## setup
+
+### setup opensuse
 
 ~~~bash
 sudo zypper install -y \
@@ -23,6 +25,12 @@ sudo zypper install -y \
     # python3-devel \
     # python3-pip \
     # python3-setuptools \
+~~~
+
+### setup native_posix
+
+~~~bash
+sudo zypper install gcc-32bit glibc-devel-32bit libgcc_s1-32bit
 ~~~
 
 ## install
@@ -61,6 +69,12 @@ time west build --pristine -s zmk/app -d build/left -b nice_nano -- -DSHIELD=lil
 
 ~~~bash
 time west build --pristine -s zmk/app -d build/right -b nice_nano -- -DSHIELD=lily58_right -DZMK_CONFIG=$PWD/config
+~~~
+
+### build native
+
+~~~bash
+time west build --pristine -s zmk/app -d build/native -b native_posix -- -DZMK_config=$PWD/native_posix_config
 ~~~
 
 ## upload
