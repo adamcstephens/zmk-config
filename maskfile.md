@@ -33,6 +33,12 @@ sudo zypper install -y \
 sudo zypper install gcc-32bit glibc-devel-32bit libgcc_s1-32bit
 ~~~
 
+### setup hci interface
+
+~~~bash
+sudo btattach -B /dev/ttyAMA1 --protocol bcm -S 3000000
+~~~
+
 ## install
 
 ### install zephyr
@@ -74,7 +80,7 @@ time west build --pristine -s zmk/app -d build/right -b nice_nano -- -DSHIELD=li
 ### build native
 
 ~~~bash
-time west build --pristine -s zmk/app -d build/native -b native_posix -- -DZMK_config=$PWD/native_posix_config
+time west build --pristine -s zmk/app -d build/native -b native_posix_64 -- -DSHIELD=rpi -DZMK_CONFIG=$PWD/native_posix_config
 ~~~
 
 ## upload
