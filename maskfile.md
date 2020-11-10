@@ -99,3 +99,13 @@ cp build/left/zephyr/zmk.uf2 /run/media/$USER/NICENANO/
 ~~~bash
 cp build/right/zephyr/zmk.uf2 /run/media/$USER/NICENANO/
 ~~~
+
+## run
+
+### run native
+
+runs a native_posix build with bluetooth and flash, which is stored in flash.bin
+
+~~~bash
+sudo ./build/native/zephyr/zmk.elf --bt-dev=hci0
+~~~
