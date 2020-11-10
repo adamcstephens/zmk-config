@@ -1,0 +1,9 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_RPI
+
+config ZMK_KEYBOARD_NAME
+    default "rpi-wow"
+
+endif

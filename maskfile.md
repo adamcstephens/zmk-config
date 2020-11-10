@@ -1,6 +1,8 @@
 # my notes
 
-## opensuse setup
+## setup
+
+### setup opensuse
 
 ~~~bash
 sudo zypper install -y \
@@ -23,6 +25,21 @@ sudo zypper install -y \
     # python3-devel \
     # python3-pip \
     # python3-setuptools \
+~~~
+
+### setup native_posix
+
+~~~bash
+sudo zypper install gcc-32bit glibc-devel-32bit libgcc_s1-32bit
+~~~
+
+### setup bt
+
+opensuse doesn't work out of the box for rpi bluetooth. need to be turned in to a service
+
+~~~bash
+sudo ln -sf /lib/firmware/*.hcd /lib/firmware/brcm/
+sudo btattach -B /dev/ttyAMA1 --protocol bcm -S 3000000
 ~~~
 
 ## install
@@ -63,6 +80,12 @@ time west build --pristine -s zmk/app -d build/left -b nice_nano -- -DSHIELD=lil
 time west build --pristine -s zmk/app -d build/right -b nice_nano -- -DSHIELD=lily58_right -DZMK_CONFIG=$PWD/config
 ~~~
 
+### build native
+
+~~~bash
+time west build -s zmk/app -d build/native -b native_posix_64 -- -DSHIELD=zmk_linux -DZMK_CONFIG=$PWD/native_posix_config
+~~~
+
 ## upload
 
 ### upload left
@@ -75,4 +98,14 @@ cp build/left/zephyr/zmk.uf2 /run/media/$USER/NICENANO/
 
 ~~~bash
 cp build/right/zephyr/zmk.uf2 /run/media/$USER/NICENANO/
+~~~
+
+## run
+
+### run native
+
+runs a native_posix build with bluetooth and flash, which is stored in flash.bin
+
+~~~bash
+sudo ./build/native/zephyr/zmk.elf --bt-dev=hci0
 ~~~

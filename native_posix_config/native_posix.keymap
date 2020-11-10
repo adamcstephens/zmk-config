@@ -1,0 +1,23 @@
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/kscan-mock.h>
+
+
+&kscan {
+	events = <
+	>;
+};
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+		label ="Default keymap";
+
+		default_layer {
+			bindings = <
+				&kp LEFT_CONTROL &kp LEFT_CONTROL
+				&kp LEFT_SHIFT &none
+			>;
+		};
+	};
+};
