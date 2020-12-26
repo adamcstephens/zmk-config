@@ -91,13 +91,15 @@ time west build -s zmk/app -d build/native -b native_posix_64 -- -DSHIELD=zmk_li
 ### upload left
 
 ~~~bash
-cp build/left/zephyr/zmk.uf2 /run/media/$USER/NICENANO/
+udisksctl mount -b /dev/sda
+cp lily58_left_nice_nano.uf2 /run/media/$USER/NICENANO/
 ~~~
 
 ### upload right
 
 ~~~bash
-cp build/right/zephyr/zmk.uf2 /run/media/$USER/NICENANO/
+udisksctl mount -b /dev/sda
+cp lily58_right_nice_nano.uf2 /run/media/$USER/NICENANO/
 ~~~
 
 ## run
