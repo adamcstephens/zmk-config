@@ -4,3 +4,4 @@ tools/
 zephyr/
 zmk/
 flash.bin
+*.uf2
