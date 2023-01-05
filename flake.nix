@@ -6,7 +6,7 @@
 
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-darwin"];
+      systems = ["x86_64-linux"];
       perSystem = {
         pkgs,
         self',
