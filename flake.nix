@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    zmk-config-nix.url = "github:Tomaszal/zmk-config-nix";
+    zmk-config-nix.url = "github:adamcstephens/zmk-config-nix";
   };
 
   outputs = inputs @ {flake-parts, ...}:
