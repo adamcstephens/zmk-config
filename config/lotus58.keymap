@@ -39,7 +39,7 @@
         // triggered by left hand
         lower_layer {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &trans   &trans    &trans
+&kp GRAVE   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR                     &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &trans   &trans    &trans
 &trans      &trans       &kp UP       &trans       &kp PG_UP    &kp HOME                       &kp PRCNT     &kp LBRC      &kp RBRC      &trans   &kp PSCRN &kp AMPS
 &reset      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &kp END       &trans   &trans  &kp DLLR      &kp LBKT      &kp RBKT      &trans   &kp TILDE &kp UNDER
 &bootloader &trans       &trans       &kp LBRC     &kp RBRC     &trans        &trans   &trans  &kp AT        &kp PLUS      &kp EQUAL     &trans   &kp STAR  &kp PIPE
