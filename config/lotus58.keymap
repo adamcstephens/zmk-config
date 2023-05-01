@@ -53,7 +53,7 @@
 &bootloader &trans       &trans       &kp LBRC     &kp RBRC     &trans        &trans   &trans  &kp AT        &kp PLUS      &kp EQUAL     &trans   &kp STAR  &kp PIPE
                                       &trans       &trans       &trans        &trans   &trans  &trans        &kp DEL       &trans
    >;
-            sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         // triggered by right hand
