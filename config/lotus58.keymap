@@ -19,13 +19,25 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
-        hm: hold_tap {
+        lhm: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <300>;
-            label = "HOLD_MOD";
+            label = "home_mod";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
+            // hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 32 33 34 35 36 37 46 47 48 49 50>;
+            // hold-trigger-on-release = true;
+        };
+        rhm: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <300>;
+            label = "home_mod";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            // hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 39 40 41 42 43>;
+            // hold-trigger-on-release = true;
         };
     };
 
@@ -34,10 +46,10 @@
 
         default_layer {
             bindings = <
-&kp GRAVE     &kp N1     &kp N2      &kp N3      &kp N4      &kp N5                           &kp N6      &kp N7      &kp N8      &kp N9      &kp N0        &kp MINUS
-&kp TAB       &kp Q      &kp W       &kp E       &kp R       &kp T                            &kp Y       &kp U       &kp I       &kp O       &kp P         &kp BSLH
-&mt LCTRL ESC &hm LALT A &hm LMETA S &hm LCTRL D &hm LSHFT F &kp G  &kp C_PP       &kp PSCRN  &kp H       &hm RSHFT J &hm RCTRL K &hm RMETA L &hm RALT SEMI &ht RCTRL SQT
-&kp LSHFT     &kp Z      &kp X       &kp C       &kp V       &kp B  &kp C_MUTE     &kp C_PP   &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH      &kp RSHFT
+&kp GRAVE     &kp N1      &kp N2       &kp N3       &kp N4       &kp N5                           &kp N6      &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
+&kp TAB       &kp Q       &kp W        &kp E        &kp R        &kp T                            &kp Y       &kp U        &kp I        &kp O        &kp P          &kp BSLH
+&mt LCTRL ESC &lhm LALT A &lhm LMETA S &lhm LCTRL D &lhm LSHFT F &kp G  &kp C_PP       &kp PSCRN  &kp H       &rhm RSHFT J &rhm RCTRL K &rhm RMETA L &rhm RALT SEMI &ht RCTRL SQT
+&kp LSHFT     &kp Z       &kp X        &kp C        &kp V        &kp B  &kp C_MUTE     &kp C_PP   &kp N       &kp M        &kp COMMA    &kp DOT      &kp FSLH       &kp RSHFT
                                      &kp LALT    &kp LGUI    &mo 1  &kp ENTER      &kp SPACE  &mo 2       &kp BSPC    &kp LGUI
             >;
 
