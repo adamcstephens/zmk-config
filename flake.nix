@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    zmk-config-nix.url = "github:adamcstephens/zmk-config-nix";
+    zmk-nix.url = "git+ssh://git@git.s.junco.dev:2222/adam/zmk-nix.git?ref=main";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -30,12 +30,12 @@
             path = "${self'.packages.lotus58-right}/bin/zmk.uf2";
           }
         ];
-        packages.lotus58-left = inputs.zmk-config-nix.packages.${system}.zmkBinary {
+        packages.lotus58-left = inputs.zmk-nix.legacyPackages.${system}.zmkBinary {
           config = ./config;
           board = "nice_nano_v2";
           shield = "lotus58_left";
         };
-        packages.lotus58-right = inputs.zmk-config-nix.packages.${system}.zmkBinary {
+        packages.lotus58-right = inputs.zmk-nix.legacyPackages.${system}.zmkBinary {
           config = ./config;
           board = "nice_nano_v2";
           shield = "lotus58_right";
@@ -50,12 +50,12 @@
             path = "${self'.packages.lily58-right}/bin/zmk.uf2";
           }
         ];
-        packages.lily58-left = inputs.zmk-config-nix.packages.${system}.zmkBinary {
+        packages.lily58-left = inputs.zmk-nix.legacyPackages.${system}.zmkBinary {
           config = ./config;
           board = "nice_nano_v2";
           shield = "lily58_left";
         };
-        packages.lily58-right = inputs.zmk-config-nix.packages.${system}.zmkBinary {
+        packages.lily58-right = inputs.zmk-nix.legacyPackages.${system}.zmkBinary {
           config = ./config;
           board = "nice_nano_v2";
           shield = "lily58_right";
