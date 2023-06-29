@@ -19,12 +19,12 @@
       #binding-cells = <2>;
       bindings = <&kp>, <&kp>;
     };
-    hm: hold_tap {
+    hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
-      flavor = "balanced";
-      tapping-term-ms = <300>;
-      label = "HOLD_MOD";
+      label = "HOMEROW_MODS";
       #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
   };
@@ -48,7 +48,7 @@
 			bindings = <
 &kp GRAVE   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR                       &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &trans   &trans    &trans
 &trans      &trans       &kp UP       &trans       &kp PG_UP    &kp HOME                         &kp PRCNT     &kp LBRC      &kp RBRC      &trans   &kp PSCRN &kp AMPS
-&reset      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &kp END                          &kp DLLR      &kp LBKT      &kp RBKT      &trans   &kp TILDE &kp UNDER
+&sys_reset  &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &kp END                          &kp DLLR      &kp LBKT      &kp RBKT      &trans   &kp TILDE &kp UNDER
 &bootloader &trans       &trans       &kp LBRC     &kp RBRC     &trans        &kp C_MUTE &trans  &kp AT        &kp PLUS      &kp EQUAL     &trans   &kp STAR  &kp PIPE
                                       &trans       &trans       &trans        &trans     &trans  &trans        &kp DEL       &trans
 			>;
@@ -60,7 +60,7 @@
 			bindings = <
 &kp F1     &kp F2    &kp F3    &kp F4   &kp F5           &kp F6                           &kp F7        &kp F8        &kp F9        &kp F10    &kp F11  &kp F12
 &trans     &trans    &trans    &trans   &kp LS(LA(UP))   &trans                           &kp PG_UP     &trans        &kp UP        &trans     &trans   &trans
-&trans     &trans    &trans    &trans   &kp LS(LA(DOWN)) &kp C_NEXT                       &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT  &trans   &reset
+&trans     &trans    &trans    &trans   &kp LS(LA(DOWN)) &kp C_NEXT                       &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT  &trans   &sys_reset
 &trans     &trans    &trans    &trans   &trans           &trans       &trans   &trans     &trans        &kp PLUS      &kp EQUAL     &trans     &trans   &bootloader
                                &trans   &trans           &trans       &trans   &kp ENTER  &trans        &trans        &trans
 			>;
