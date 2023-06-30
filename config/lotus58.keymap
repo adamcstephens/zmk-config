@@ -35,7 +35,7 @@
         lhm: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <220>;
             label = "home_mod";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
@@ -45,7 +45,7 @@
         rhm: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <220>;
             label = "home_mod";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
